@@ -1,5 +1,3 @@
-### A Phy layer simulator
-
 BabbleSim is a simulator of the physical layer of shared medium networks.
 
 Its main objective is to be an aid to develop network protocols and network
@@ -33,7 +31,9 @@ The Phy is the process which:
 * Handles the devices coordination in that medium.
 
 <center>
-![Phy-device interface](Phy_device_split.svg "Phy-device interface")
+<object data="Phy_device_split.svg" type="image/svg+xml">
+<p style="text-align:center">Diagram of the simulation split between the devices and the phy</p>
+</object>
 <p style="text-align:center">Phy-device interface</p>
 </center>
 

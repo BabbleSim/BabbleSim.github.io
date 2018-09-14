@@ -26,4 +26,4 @@ When designing BabbleSim, and while mainaining it forward, the following were an
 	* The Device-Phy interface is kept ABI compatible while possible
 
 
-1* The target being: the 2 latests RedHats (6 & 7), 2 latest Ubuntu LTS (16.04 & 18.04), and the current Debian stable (Stretch).
+1* The target being: the 2 latest RedHats (6 & 7), 2 latest Ubuntu LTS (16.04 & 18.04), and the current Debian stable (Stretch).
