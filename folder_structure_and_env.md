@@ -1,7 +1,7 @@
 ## Folder structure
 
 The default folder structure, which you will have if you just follow the default 
-instructions is as follows:
+instructions, is as follows:
 ```
 .
 ├── components
@@ -22,8 +22,8 @@ instructions is as follows:
 └── results              Where simulations output is stored
 ```
 
-It is supported placing components and/or the output in different folders.
-For this a set of environment variables are defined. <br>
+It is possible to place components and/or the output in different folders.
+For this a set of environment variables are defined.<br>
 These wil be set automatically assuming the default folder structure when using the provided 
 Makefiles. But they can be set to something else before calling make.<br>
 

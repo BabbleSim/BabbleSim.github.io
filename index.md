@@ -26,6 +26,7 @@ In a simulation, several devices are run together with one Phy for each
 type of shared medium.
 A device is, in general, a network device, for ex. a phone, a wireless headset,
 an interferer...
+
 The Phy is the process which:
 
 * Emulates the channel/shared medium and modem (analog and digital
@@ -59,7 +60,8 @@ typically placed in the `components/` folder.
 
 [You can find the BabbleSim repositories here](https://github.com/BabbleSim).
 Typically all users will fetch the 
-[base repository](https://github.com/BabbleSim/base)
+[base repository](https://github.com/BabbleSim/base).
+
 For more information on how to fetch the different components, please
 see [here](fetching.md).
 
@@ -89,21 +91,21 @@ BabbleSim incudes a set of optional libraries which provide
 functonalities like tracing, results dumping, command line argument
 parsing, random number generation, etc.
 
-A set of simple debug aid/ancillary devices are included in the base
-repository [base repository](https://github.com/BabbleSim/base).
+A set of simple debug aid/ancillary devices are included in the
+[base repository](https://github.com/BabbleSim/base).
 
 #### Zephyr's NRF52_bsim and the NRF52 HW models
 
 Even though BabbleSim does not set how the CPU is emulated
 (if at all), or how the HW should be modelled, the BabbleSim GitHub
 organization does contain a git repository with 
-[models of the NRF52 HW](https://github.com/BabbleSim/ext_NRF52_hw_models)
-These models can be used together with the 
+[models of the NRF52 HW](https://github.com/BabbleSim/ext_NRF52_hw_models).<br>
+These models can be used together with
 [Zephyr's](https://zephyrproject.org) nrf52_bsim board (TODO: add link)
-to execute Zephyr and use BabbleSim's phy to simulate the communication
+to execute Zephyr and use BabbleSim's 2G4 Phy to simulate the BLE communication
 over the 2.4GHz ISM band.
 A quick guide on how to get this device up and running can be found
-in this Zephyr board page. (TODO: add link to same board page)
+in the board page. (TODO: add link to same board page)
 
 ### Design choices
 

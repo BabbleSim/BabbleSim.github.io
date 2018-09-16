@@ -10,5 +10,5 @@ repo init -u git@github.com:BabbleSim/manifest.git -m everything.xml -b master
 repo sync
 ```
 
-For a description of provided manifests, please see the
+For a list and description of the provided manifests, please see the
 [manifest repository documenation](https://github.com/BabbleSim/manifest)
