@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
 title: [BabbleSim]
-description: [A Physical layer simulator]
+description: [A physical layer simulator]
 github:
   is_project_page: True
   repository_url: https://github.com/BabbleSim

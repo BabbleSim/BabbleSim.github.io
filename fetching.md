@@ -1,4 +1,4 @@
-#Fetching BabbleSim
+## Fetching BabbleSim
 
 The BabbleSim project consists of many components, most of them optional
 and each in its own separate git repository.
@@ -10,5 +10,5 @@ repo init -u git@github.com:BabbleSim/manifest.git -m everything.xml -b master
 repo sync
 ```
 
-For a description of provided manifests, please see the manifest repository
-documenation (TODO: add link)
+For a description of provided manifests, please see the
+[manifest repository documenation](https://github.com/BabbleSim/manifest)
