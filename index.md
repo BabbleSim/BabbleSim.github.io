@@ -78,11 +78,14 @@ debugger or instrument them without affecting the simulation results.
 you can find both the recommended folder structure, as well as
 how to work with off-tree components.
 
+### Building
+
+[Find here instructions on how to build](building.md)
+
 ### How to use
 
 The best way to understand how to use BabblEsim, is by trying it.
-Please follow the instructions in here(TODO Add link to 2G4 usage example)
-for an example using the 2.4GHz Phy.
+[Here you can find an exampel on how to un a simple case](example_2g4.md).
 
 ### What BabbleSim includes
 
