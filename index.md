@@ -84,8 +84,8 @@ how to work with off-tree components.
 
 ### How to use
 
-The best way to understand how to use BabblEsim, is by trying it.
-[Here you can find an exampel on how to un a simple case](example_2g4.md).
+The best way to understand how BabblEsim works is by trying it.
+[Here you can find an exampel on how to run a simple case](example_2g4.md).
 
 ### What BabbleSim includes
 
