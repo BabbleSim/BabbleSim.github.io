@@ -38,9 +38,12 @@ won't be able to find the libraries in `lib/`)
 ### External components
 
 If you want to develop an external component, it is up to you which build system
-you want to use. All you will normally need, is:
+you want to use. One simple option is to follow the same structure as the other
+components stored in this GitHub organization.
+Otherwise, all you will normally need, is:
 
-* To prebuild the BabbleSim libraries your component depends on
-* Include the headers directories in your compile,
+* To prebuild the BabbleSim libraries your component depends on using
+  BabbleSim's build
+* Include the needed headers directories in your compile,
   (for ex. `-I${BSIM_COMPONENTS_PATH}/libPhyComv1/src/` ),
 * And include `${BSIM_OUT_PATH}/lib/library_you_need.a` in your linking
