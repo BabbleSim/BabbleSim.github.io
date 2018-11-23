@@ -104,11 +104,12 @@ Even though BabbleSim does not set how the CPU is emulated
 organization does contain a git repository with 
 [models of the NRF52 HW](https://github.com/BabbleSim/ext_NRF52_hw_models).<br>
 These models can be used together with
-[Zephyr's](https://zephyrproject.org) nrf52_bsim board (TODO: add link)
+[Zephyr's](https://zephyrproject.org)
+[nrf52_bsim board](https://docs.zephyrproject.org/latest/boards/posix/nrf52_bsim/doc/board.html)
 to execute Zephyr and use BabbleSim's 2G4 Phy to simulate the BLE communication
 over the 2.4GHz ISM band.
 A quick guide on how to get this device up and running can be found
-in the board page. (TODO: add link to same board page)
+[in this board's page](https://docs.zephyrproject.org/latest/boards/posix/nrf52_bsim/doc/board.html#building-and-running)
 
 ### Design choices
 
