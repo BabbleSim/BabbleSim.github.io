@@ -55,7 +55,7 @@ crashes at boot, or some mistake is done it can be tedious to fix. Instead you
 may want to simply stop all running simulation components. You can do that with
 the `stop_bsim.sh` script.
 You will find it in
-`${BSIM_COMPONENTS_PATH}/components/common/stop_bsim.sh`.
+`${BSIM_COMPONENTS_PATH}/common/stop_bsim.sh`.
 You can either run the script directly, which will stop all your ongoing
 simulations, or provide to it a simulation ID as its only paramter, in which
 case it will only stop the processes linked to that simulation.
