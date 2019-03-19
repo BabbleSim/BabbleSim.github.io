@@ -14,10 +14,10 @@ Components executables shall, in general, be named
 where "component_name" shall match the component folder name, and
 "anything else" is up to each component designer
 
-Phys, and libraries which are meant only for 1 medium should be prefixed by
-that medium default name.<br>
-Devices which are only meant for 1 medium should be named
-```device_<default_medium_id>_<rest_of_component_name>```
+Components which are meant only for one Phy type should
+be prefixed by that Phy default name.<br>
+Devices which are only meant for 1 Phy should be named
+```device_<default_phy_id>_<rest_of_component_name>```
 
 #### External components
 

@@ -9,7 +9,7 @@ consistency.
 To allow for easy filtering, and identification, each trace is prefixed with:
 
 * `d_<%2i>`: for devices, where `%2i` is the global device number in the
-  simulation with at least 2 digits
+  simulation with 2 digits
 * `p_<phy_id>`: for the Phy
 
 Subcomponents of devices or the Phys may append their own prefix afterwards
