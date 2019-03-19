@@ -22,13 +22,14 @@ A C library with both a blocking and a non blocking API is provided to ease
 building devices which connect to a Phy.
 For those so inclined, it is not even necessary to use this library: The
 device-phy protocol can also be implemented by hand.
-(TODO: link to UML sequence diagrams and decription of the interface for 2G4)
 
 As the only requirement for a device to connect to a Phy is to either call
 functions in this C library (or implement this protocol in some other way), it
 is possible to have devices built in almost any programming or scripting
 language; to mix 32 and 64 binaries; to model them at completly different
 levels of abstraction; or to run some of them in simulators/emulators.
+You may run any device in a debugger or instrument it in any other way without
+affecting the simulation results.
 
 
 #### How devices and the Phy know about each other.
@@ -40,7 +41,7 @@ number.
 
 For cases in which several Phys are present in a simulation (due to having
 several shared mediums, e.g. Ethernet & BLE), a Phy is identified by a
-"Phy identification string". 
+"Phy identification string".
 In general a device also has a "global device number" which identifies it
 uniquely inside a simulation.
 The most typical case is that only 1 Phy is running, and that a device "global

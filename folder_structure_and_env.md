@@ -1,6 +1,6 @@
 ## Folder structure
 
-The default folder structure, which you will have if you just follow the default 
+The default folder structure, which you will have if you just follow the default
 instructions, is as follows:
 ```
 .
@@ -22,16 +22,21 @@ instructions, is as follows:
 └── results              Where simulations output is stored
 ```
 
-It is possible to place components and/or the output in different folders.
-For this a set of environment variables are defined.<br>
-These wil be set automatically assuming the default folder structure when using the provided 
+By default the intermediate results of compiling a component will be placed
+inside that same component folder. And the generated binaries and libraries
+will be stored inside the simulator bin/ and lib/ folders.
+
+But it is possible to place components and/or the output in different folders.
+For this, a set of environment variables are defined.<br>
+These wil be set automatically assuming the default folder structure when using the provided
 Makefiles. But they can be set to something else before calling make.<br>
 
 
-| Variable | Definition | 
-| :---     | :---       | 
+
+| Variable | Definition |
+| :---     | :---       |
 | `BSIM_COMPONENTS_PATH` | Path to the components folder.<br> By default the top level makefile assumes it is in the<br>same directory as the folder `components/`<br>The individual component makefiles, assume they are<br>placed inside `components/<component>/` |
-| `BSIM_BASE_PATH` | Path to the folder where the base repo was cloned.<br>By default the same as `BSIM_COMPONENTS_PATH` | 
+| `BSIM_BASE_PATH` | Path to the folder where the base repo was cloned.<br>By default the same as `BSIM_COMPONENTS_PATH` |
 | `BSIM_OUT_PATH` | Where the compilation results are installed. That is,<br> where `lib/`, `bin/` and `results/` will be created.|
 | `COMPONENT_OUTPUT_DIR` | Where the intermediate results of compiling a particular<br> component will be placed<br>By default the folder of the component being compiled |
 | For the 2G4 external components: ||

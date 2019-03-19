@@ -6,7 +6,7 @@ When designing BabbleSim, and while mainaining it forward, the following were an
     * Allow for real target code to run in simulations
     * Minimize 3rd party dependencies in common components
     * Permissive license
-    * Compatible with multiple Linux distributions *1.
+    * Compatible with multiple Linux distributions[^1].
 * Highly modular:
     * Minimize all types of requirements to possible external components/devices
     * No requirements for the programming or scripting language used
@@ -26,4 +26,4 @@ When designing BabbleSim, and while mainaining it forward, the following were an
 	* The Device-Phy interface is kept ABI compatible while possible
 
 
-1* The target being: the 2 latest RedHats (6 & 7), 2 latest Ubuntu LTS (16.04 & 18.04), and the current Debian stable (Stretch).
+[^1]: The target being: the 2 latest RedHats (6 & 7), 2 latest Ubuntu LTS (16.04 & 18.04), and the current Debian stable (Stretch).
