@@ -55,11 +55,11 @@ By its nature, BabbleSim is highly modular. Reflecting this modular
 approach, BabbleSim is organized in a set of separate git repositories.
 In general one fetches and builds only the repositories/components one
 is interested on.
-In BabbleSim a component is understood as a device, phy, or library, which is 
+In BabbleSim a component is understood as a device, phy, or library, which is
 typically placed in the `components/` folder.
 
 [You can find the BabbleSim repositories here](https://github.com/BabbleSim).
-Typically all users will fetch the 
+Typically all users will fetch the
 [base repository](https://github.com/BabbleSim/base).
 
 For more information on how to fetch the different components, please
@@ -85,7 +85,7 @@ how to work with off-tree components.
 ### How to use
 
 The best way to understand how BabblEsim works is by trying it.
-[Here you can find an exampel on how to run a simple case](example_2g4.md).
+[Here you can find an example on how to run a simple case](example_2g4.md).
 
 ### What BabbleSim includes
 
@@ -94,7 +94,7 @@ BabbleSim incudes a set of optional libraries which provide
 functonalities like tracing, results dumping, command line argument
 parsing, random number generation, etc.
 
-A set of simple debug aid/ancillary devices are included in the
+Moreover, a set of simple debug aid/ancillary devices are included in the
 [base repository](https://github.com/BabbleSim/base).
 
 #### Zephyr's NRF52_bsim and the NRF52 HW models
