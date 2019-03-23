@@ -13,7 +13,7 @@ You can also build all components present in the `components/` folder with:
 make everything -j 8
 ```
 
-Please run `make help` for more information.
+You can run `make help` for more information.
 
 Note that by default, the top level makefile will create the folders
 `bin/` and `lib/` in the simulator top folder, and will install the different

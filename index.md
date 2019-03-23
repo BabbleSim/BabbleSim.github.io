@@ -20,18 +20,18 @@ You can find an introduction to the
 
 Different types of shared mediums have different Phys. For ex. BLE radios,
 over the 2.4GHz ISM band, use the
-[2.4GHz Phy](https://github.com/BabbleSim/ext_2G4_phy_v1)
+[2.4GHz Phy](2G4.md)
 
 In a simulation, several devices are run together with one Phy for each
 type of shared medium.
 A device is, in general, a network device, for ex. a phone, a wireless headset,
 an interferer...
 
-The Phy is the process which:
+The Phy is in charge of:
 
-* Emulates the channel/shared medium and modem (analog and digital
+* Emulating the channel/shared medium and modem (analog and digital
   demodulation) for each of the devices
-* Handles the devices coordination in that medium.
+* Handling the devices coordination in that medium.
 
 <center>
 <object data="Phy_device_split.svg" type="image/svg+xml">
@@ -43,7 +43,7 @@ The Phy is the process which:
 ### BabbleSim is fast
 
 All components of the simulator are designed to run fast, to allow
-to run long system level simulations with multiple devices in short
+running long system level simulations with multiple devices in short
 time. The simulation speed limit is set by the execution speed of the devices.
 The Phy and channel emulation overhead are quite minor: Simulations
 with a few simple devices with BLE like activity will run in the order
@@ -62,15 +62,16 @@ typically placed in the `components/` folder.
 Typically all users will fetch the
 [base repository](https://github.com/BabbleSim/base).
 
-For more information on how to fetch the different components, please
-see [here](fetching.md).
+You can find more information on how to fetch the different components
+[in this page](fetching.md).
 
 ### It is easy to debug any device
 
 By design, the Phy will wait for any device and block other devices
 when neccessary.
 That means that you can run any device (or several of them), in a
-debugger or instrument them without affecting the simulation results.
+[debugger or instrument them](debugging.md) without affecting the
+simulation results.
 
 ### Folder structure
 
@@ -84,7 +85,7 @@ how to work with off-tree components.
 
 ### How to use
 
-The best way to understand how BabblEsim works is by trying it.
+The best way to understand how BabbleSim works is by trying it.
 [Here you can find an example on how to run a simple case](example_2g4.md).
 
 ### What BabbleSim includes
@@ -97,11 +98,25 @@ parsing, random number generation, etc.
 Moreover, a set of simple debug aid/ancillary devices are included in the
 [base repository](https://github.com/BabbleSim/base).
 
+For BLE (BT Smart) development, it includes:
+
+* A physical layer for BLE devices: The [2G4 Phy](2G4.md).
+* [Interferers models](2G4Interf.md)
+* 3 selectable channel models:
+    * A [cable + N to N attenuator](https://github.com/BabbleSim/ext_2G4_channel_NtNcable)
+    * A [N to N atenuator with independent attenautions](https://github.com/BabbleSim/ext_2G4_channel_multiatt) per path
+    * A model of [indoors propagation in the 2.4GHz band](https://github.com/BabbleSim/ext_2G4_channel_Indoorv1)
+* 2 selectable modem models:
+    * A [model which will receive any packet with a configurable BER](https://github.com/BabbleSim/ext_2G4_modem_magic)
+    * A [generic BLE modem performance model](https://github.com/BabbleSim/ext_2G4_modem_BLE_simple)
+* A device which can re-play back the activity of any device in a a previous simulation run:
+  [ext_2G4_device_playback](https://github.com/BabbleSim/ext_2G4_device_playback)
+
 #### Zephyr's NRF52_bsim and the NRF52 HW models
 
 Even though BabbleSim does not set how the CPU is emulated
 (if at all), or how the HW should be modelled, the BabbleSim GitHub
-organization does contain a git repository with 
+organization does contain a git repository with
 [models of the NRF52 HW](https://github.com/BabbleSim/ext_NRF52_hw_models).<br>
 These models can be used together with
 [Zephyr's](https://zephyrproject.org)
@@ -118,3 +133,19 @@ This is BabbleSim's list of [design choices & objectives](objectives.md)
 ### License and contributing to BabbleSim
 
 [Here you can find our contribution guidelines and an introduction to BabbleSim license](contribution_guidelines.md)
+
+### More information
+
+* [Babblesim's architecture](architecture.md)
+* [How to fetch BabbleSim](fetching.md)
+* [BabbleSim folder structure](folder_structure_and_env.md)
+* [How to build](building.md) BabbleSim
+* [An example with the 2G4 Phy](example_2g4.md)
+* [How to debug](debugging.md)
+* [Component naming convention](components_naming.md)
+* [Tracing and results/output files](tracing_and_results.md)
+* [The 2G4/BLE Phy](2G4.md)
+* [Importing BLE activity into the Ellisys BT analyzer SW](import_Ellisys.md)
+* [Selecting channel and modem for the 2G4 Phy](2G4_select_ch_mo.md)
+* [Design choices and objectives](objectives.md)
+* [Infrequently asked questions](ifaq.md)

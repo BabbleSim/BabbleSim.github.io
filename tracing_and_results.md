@@ -12,7 +12,8 @@ To allow for easy filtering, and identification, each trace is prefixed with:
   simulation with 2 digits
 * `p_<phy_id>`: for the Phy
 
-Subcomponents of devices or the Phys may append their own prefix afterwards
+Subcomponents of devices or the Phys may append their own prefix afterwards.
+
 Libraries should use the tracing of the program that uses them
 
 ## File generation
