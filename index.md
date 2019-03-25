@@ -132,7 +132,7 @@ This is BabbleSim's list of [design choices & objectives](objectives.md)
 
 ### License and contributing to BabbleSim
 
-[Here you can find our contribution guidelines and an introduction to BabbleSim license](contribution_guidelines.md)
+[Here you can find our contribution guidelines and an introduction to BabbleSim's license](contribution_guidelines.md)
 
 ### More information
 
