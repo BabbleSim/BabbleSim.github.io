@@ -12,4 +12,4 @@ Two interfers models for this physical layer are included:
   Although very simplistic, it generates patterns of channel occupancy similar
   to what a real WLAN would generate while its underlying traffic pattern would
   remain static. More information can be found in
-  [its documentation](https://github.com/BabbleSim/ext_2G4_device_WLAN_actmod/blob/master/docs/Description.pdf)
+  [its documentation](https://github.com/BabbleSim/ext_2G4_device_WLAN_actmod/raw/master/docs/Description.pdf)
