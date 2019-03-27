@@ -35,6 +35,11 @@ When building a component, other components it depends on will be built first.
 During incremental builds make will check for dependencies and rebuild what is
 necessary (Although the makefiles themselves are not listed as dependencies).
 
+If a component cannot be built, the top level makefile will continue building
+any other requested component which does not depend on it. For example, if the
+FFTw3 library is missing, `ext_2G4_channel_Indoorv1` will fail to build, but all
+other components will be built properly, as none depends on this channel model.
+
 Note that most BabbleSim components assume they are executed from the `bin/`
 directory and will fail by default if placed in other places (as they
 won't be able to find the libraries in `lib/`)
