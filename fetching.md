@@ -10,6 +10,21 @@ repo init -u git@github.com:BabbleSim/manifest.git -m everything.xml -b master
 repo sync
 ```
 
+<div class="note-container">
+<div class="note-title">Note</div>
+<div class="note">To build BabbleSim, you must have the 32-bit C library
+installed in your system (in Ubuntu 18.04 install the
+<span class="monospaced-font">gcc-multilib</span> package)</div>
+</div>
+
+<div class="note-container">
+<div class="note-title">Note</div>
+<div class="note"><span class="monospaced-font">ext_2G4_channel_Indoorv1 </span>
+requires the FFTW3 library
+(in Ubuntu 18.04 install the
+<span class="monospaced-font">libfftw3-dev</span> package)</div>
+</div>
+
 For a list and description of the provided manifests, see the
 [manifest repository documenation](https://github.com/BabbleSim/manifest)
 
