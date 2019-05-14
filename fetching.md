@@ -2,7 +2,8 @@
 
 The BabbleSim project consists of many components, most of them optional
 and each in its own separate git repository.
-The easiest and recommended way to fetch them is by using Androids repo
+The easiest and recommended way to fetch them is by using
+[Androids repo](https://source.android.com/setup/build/downloading#installing-repo)
 
 ```
 mkdir ~/bsim/ && cd ~/bsim/
