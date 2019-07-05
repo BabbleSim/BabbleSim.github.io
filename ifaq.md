@@ -2,7 +2,7 @@
 
 ### When running a Phy or a device in valgrind I get a memory leak in `getpwuid()` of 40 bytes
 
-If running in Debian or Ubuntu, edit ```/usr/lib/valgrind/default.supp``` and add at the end the following
+If running in Debian or Ubuntu 16.04, edit ```/usr/lib/valgrind/default.supp``` and add at the end the following
 
 ```
 {
