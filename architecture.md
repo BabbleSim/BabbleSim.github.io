@@ -16,7 +16,8 @@ This will be done until the simulation ends: until the simulation duration has
 been reached or all devices have disconnected.
 
 The communication between the device and the phy is done with a well defined
-protocol for that Phy.
+protocol for that Phy. For the 2G4 Phy you can find it
+[here](https://github.com/BabbleSim/ext_2G4_libPhyComv1/tree/master/docs)
 
 A C library with both a blocking and a non blocking API is provided to ease
 building devices which connect to a Phy.
