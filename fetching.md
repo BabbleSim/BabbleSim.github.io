@@ -7,7 +7,7 @@ The easiest and recommended way to fetch them is by using
 
 ```
 mkdir ~/bsim/ && cd ~/bsim/
-repo init -u git@github.com:BabbleSim/manifest.git -m everything.xml -b master
+repo init -u https://github.com/BabbleSim/manifest.git -m everything.xml -b master
 repo sync
 ```
 
