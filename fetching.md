@@ -17,7 +17,7 @@ repo sync
 <span class="monospaced-font">~/.bashrc</span> or
 <span class="monospaced-font">~/.zephyrrc</span> file<br>
 <span class="monospaced-font">
-export BSIM_OUT_PATH="~/bsim/"<br>
+export BSIM_OUT_PATH=${HOME}/bsim/<br>
 export BSIM_COMPONENTS_PATH=${BSIM_OUT_PATH}/components/<br>
 #replace those paths as necessary
 </span>
