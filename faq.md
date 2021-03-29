@@ -45,6 +45,24 @@ index d78b61c..562225d 100755
 ```
 Note: The ext_libCryptov1 also has a tinycrypt based version of the library (in the tinycrypt branch) which should not require any hack
 
+
+### `repo` crashes/started crashing (and my default python is python2)
+
+Unfortunately repo was changed to require python 3, and to assume `python` is the `python3` interpreter.
+This is not helped by the fact that `repo` automatically fetches its latest version when fetching a new project.
+
+If your system `python` resolves to `python2` trying to run the latest `repo` ummodified will crash.
+In this case, if your system has python3 installed, a solution is to modify the first line of the repo script:
+```diff
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ # -*- coding:utf-8 -*-
+ #
+```
+
+If you don't have python3, you can download an older version of repo which works with `python2`:
+[https://source.android.com/setup/develop#old-repo-python2](https://source.android.com/setup/develop#old-repo-python2)
+
 ---------------------------
 
 More can be found in [the infrequently asked questions](ifaq.md) page
