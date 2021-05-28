@@ -1,6 +1,6 @@
 ## Frequently asked questions
 
-### Does the 2G4 Phy simulation support LE Coded Phy
+### Does the 2G4 Phy simulation support LE Coded Phy?
 
 No. Today only 1 and 2Mbps BLE modulations are supported, as well as 2, 3 & 4Mbps propietary modulations.
 
@@ -62,6 +62,45 @@ In this case, if your system has python3 installed, a solution is to modify the 
 
 If you don't have python3, you can download an older version of repo which works with `python2`:
 [https://source.android.com/setup/develop#old-repo-python2](https://source.android.com/setup/develop#old-repo-python2)
+
+
+### Can I fetch BabbleSim as a set of git submodules instead of using repo?
+
+Expanded question: *Instead of fetching BabbleSim with `repo`, I would like to fetch it as a set of git submodules for my git project.
+Unfortunately, the default folder structure places external components overlapping the base repo folder, and git submodules does not
+support submodules placed inside other submodules.*
+
+You can fetch all BabbleSim components you need as git submodules of another project. But you need to place things a bit differently than by default.
+The default is to place the base component diretly at the root of the `components/` folder. Instead you can place it in another folder and set the environmnet
+variable `BSIM_BASE_PATH` with that folder path. For extra confort (to save extra `make` calls), link all base components into the `components/` folder.
+You should also add a link to the main Makefile, and check all these links as part of the top git repository which includes BabbleSim as submodules.
+
+
+```
+bsim/
+├── base
+│   ├── common
+│   ├── device_empty
+│   ├── device_handbrake
+│   ├── device_pause_simu
+│   ├── device_time_monitor
+│   ├── libPhyComv1
+│   ├── libRandv2
+│   └── libUtilv1
+├── components
+│   ├── device_empty -> ../base/device_empty/
+│   ├── device_handbrake -> ../base/device_handbrake/
+│   ├── device_pause_simu -> ../base/device_pause_simu/
+│   ├── device_time_monitor -> ../base/device_time_monitor/
+│   ├── ext_component1                        #directly fetched as a submodule in bsim/components/
+│   ├── ext_component2                        #directly fetched as a submodule in bsim/components/
+│   ├── libPhyComv1 -> ../base/libPhyComv1/
+│   ├── libRandv2 -> ../base/libRandv2/
+│   └── libUtilv1 -> ../base/libUtilv1/
+└── Makefile -> base/common/Makefile
+```
+
+See [folder structure and environment variables](folder_structure_and_env.md) for inspiration for other options.
 
 ---------------------------
 
