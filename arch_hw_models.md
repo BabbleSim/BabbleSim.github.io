@@ -1,10 +1,10 @@
 ## Architecture of HW models used for embedded SW development and testing
 
-This general description covers the overall design choices, architecture and design patterns of these models. It applies to the nrf52 HW models, but it is not limited to them.
+This general description covers the overall design choices, architecture and design patterns of these models. It applies to the [nrf52 HW models](https://github.com/BabbleSim/ext_NRF52_hw_models), but it is not limited to them.
 
 Particular details for each model belong with the model source code. For specifics for any of these, please refer to the corresponding HW models source/documentation.
 
-These HW models are meant to be used with either a Zephyr "board" or another babblesim device which integrate them. See Architecture of *_bsim devices for more info (TODO link to Zephyr doc pending)
+These HW models are meant to be used with either a [Zephyr "board"](https://docs.zephyrproject.org/latest/boards/posix/doc/bsim_boards_design.html) or another babblesim device which integrate them.
 
 Note that just like with many other BabbleSim based components, there is no hard requirement for a HW model to follow the design described here, to be able to use other BabbleSim components. Some other HW models exist which do not follow this description. How a device HW model is designed depends on the use and needs for that HW model.
 
@@ -22,7 +22,7 @@ Overall the HW models are designed focusing on execution speed and overall simpl
 
 ### Design specification
 Overall these models are "event driven". There are several ways of building these kind of models, but for simplicity, speed, and to not need to rely on any kind of library or 3rd party engine, these models are built with a very nimble engine provided partly by the models themselves, and partly by the program that uses them (the "time machine" of either the _bsim board, the HW models testbench, or equivalent).
-The reason for this division is due to the program that integrates them being the overall scheduler (see Architecture of *_bsim devices, TODO link pending), which initializes both models and "CPU", and is in charge of when each should run.
+The reason for this division is due to the program that integrates them being the overall scheduler (see [Zephyr's bsim board design](https://docs.zephyrproject.org/latest/boards/posix/doc/bsim_boards_design.html#design) ), which initializes both models and "CPU", and is in charge of when each should run.
 
 #### Threading
 Most of the HW models and their scheduling are designed to run in one thread dedicated to the HW models. But a relatively thin interface for SW to interact with the HW models is designed to run in other threads.
@@ -34,7 +34,7 @@ The slim layer of code provided to SW to interact with the models (see [SW regis
 
 The HW models code should never call out into SW code directly. The HW models interact with the SW threads by updating their modelled status registers and raising interrupts.
 
-Note that both the HW models testbenches and the integrating boards include a test system (bs_tests (TODO link pending)) which provides a special test task which executes directly in the HW models thread.
+Note that both the HW models testbenches and the integrating boards include a test system, [bs_tests](https://docs.zephyrproject.org/latest/boards/posix/doc/bsim_boards_design.html#bs-tests), which provides a special test task which executes directly in the HW models thread.
 
 #### Event scheduling
 In reality any action performed by a HW peripheral will take some amount of time.
@@ -95,8 +95,8 @@ What command line options a model may have is fully dependent on the model. For 
 #### Special HW models
 In each of these device HW models there is two special ones which do not represent real HW and have a special role:
 
-* bstest_ticker: It provides a HW timer dedicated for the bs_tests (TODO link missing) mechanism. This timer can/is used by bs_tests based tests to either schedule execution of a test function at some given points in time and/or at periodic intervals.
-* fake_timer: it provides a HW timer used to enable SW doing busy waits (thru Zephyr's k_busy_wait() API or equivalent). See Architecture of *_bsim devices/Busywaits (TODO link to Zephyr doc pending) for more info.
+* bstest_ticker: It provides a HW timer dedicated for the [bs_tests](https://docs.zephyrproject.org/latest/boards/posix/doc/bsim_boards_design.html#bs-tests) mechanism. This timer can/is used by bs_tests based tests to either schedule execution of a test function at some given points in time and/or at periodic intervals.
+* fake_timer: it provides a HW timer used to enable SW doing busy waits (thru Zephyr's k_busy_wait() API or equivalent). See [Zephyr's POSIX architecture Busywaits](https://docs.zephyrproject.org/latest/boards/posix/doc/arch_soc.html#busy-waits) for more info.
 
 #### Use of BabbleSim (which of its components are used for what)
 Radio hardware models use the corresponding [BabbleSim physical layer simulation](https://babblesim.github.io/) to simulate it. The physical layer simulates the shared medium between devices, includes propagation and interference effects, and coordinates the simulated time with other simulated devices.
@@ -136,10 +136,10 @@ Typical activity may be information which is useful to debug or understand the s
 #### Testing of these HW models
 Some of these models sets do not include any dedicated test and rely directly on the integrating projects to test them, for example as a collateral effect of testing the FW that uses them.
 
-Some other models are tested thru a dedicated program/test bench included in the same BabbleSim component as the HW models. This dedicated test program follows what is described in [How are these models integrated](#How-are-these-models-integrated), and relies on a HW only version of the bs_tests (TODO link missing) component. This wrapping test bench can be understood as a very cut down/minimal version of the Zephyr _bsim devices (TODO link missing) without the CPU simulation or FW under test.
+Some other models are tested thru a dedicated program/test bench included in the same BabbleSim component as the HW models. This dedicated test program follows what is described in [How are these models integrated](#How-are-these-models-integrated), and relies on a HW only version of the [bs_tests](https://docs.zephyrproject.org/latest/boards/posix/doc/bsim_boards_design.html#bs-tests) component. This wrapping test bench can be understood as a very cut down/minimal version of the [Zephyr _bsim devices](https://docs.zephyrproject.org/latest/boards/posix/doc/bsim_boards_design.html) without the CPU simulation or FW under test.
 
 #### How are these models integrated
-For information on how to integrate these models in Zephyr based devices please check Architecture of *_bsim devices (TODO link missing).
+For information on how to integrate these models in Zephyr based devices please check [Zephyr's *_bsim devices documentation](https://docs.zephyrproject.org/latest/boards/posix/doc/bsim_boards_design.html#design).
 
 ##### Models interface towards a device event scheduler
 As described before, overall the models are "event driven": They rely on an overall scheduler triggering (calling) them in the appropriate times.
@@ -159,7 +159,7 @@ No other HW model function can be called before these two.
 ##### Models libraries
 In general, when this models are provided as a separate BabbleSim component, they include at least a Makefile which can be used with the overall BabbleSim build system.
 
-With this makefile at least a library including this HW models will be built. This library can then be included in an integrating program which would also include the SW under test, test bench facilities, other possible HW models, and any overall wrapping code (see Architecture of *_bsim devices for information on Zephyr based devices (TODO link missing)).
+With this makefile at least a library including this HW models will be built. This library can then be included in an integrating program which would also include the SW under test, test bench facilities, other possible HW models, and any overall wrapping code (see [Zephyr *_bsim devices](https://docs.zephyrproject.org/latest/boards/posix/doc/bsim_boards_design.html#design) for information on Zephyr based devices).
 
 This make file will also provide the means to build the dedicated HW test application if it exists (see [Testing of these HW models](#Testing-of-these-HW-models) ).
 
@@ -172,7 +172,7 @@ There can be different types of HW like this:
 * It may be a HW model that interfaces only other HW. Typically this will be implemented as a component which provides a set of functions callable from other HW models and which perform their actions directly.
 * It may be a HW model that also has a SW interface. In this case the HW model will instantiate a SW-interface-registers structure that matches the real peripheral interface (see [SW registers IF](#SW-registers-IF)).
 If this is limited to exposing status the model may simply update its status registers in its SW-interface-registers structure. But it may also have registers with side-effects that SW accesses; in this later case the models may perform all actions required by the side-effects directly in the call from the side-effecting function (Care should be taken here as that function will execute in a SW thread context).
-* The model may need to raise interrupts. In that case, the model should use `hw_irq_ctrl_set_irq()` to pend the interrupt (which will cause the interrupt to be handled 1 delta cycle later in the SW execution context) (see Architecture of HW models used for FW development and testing#HWinterrupts (TODO: link missing))
+* The model may need to raise interrupts. In that case, the model should use `hw_irq_ctrl_set_irq()` to pend the interrupt (which will cause the interrupt to be handled 1 delta cycle later in the SW execution context) (see [Zephyr's posix arch soc and board design introduction](https://docs.zephyrproject.org/latest/boards/posix/doc/arch_soc.html#soc-and-board-layers))
 
 #### Timed HW model
 Timed HW models, apart from implementing what [non-timed HW models](#Non-timed-HW-model) do, will also expose at least one event timer to the top level time/event scheduler, and have a registered function which will be called when the event time is reached. This type of models will normally need to keep some internal status apart from the SW-interface-registers structure. How the model is implemented depends greatly on what it does.

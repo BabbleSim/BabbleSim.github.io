@@ -142,6 +142,7 @@ This is BabbleSim's list of [design choices & objectives](objectives.md)
 * [How to build](building.md) BabbleSim
 * [An example with the 2G4 Phy](example_2g4.md)
 * [How to debug](debugging.md)
+* [Architecture of HW models used for embedded SW testing](arch_hw_models.md)
 * [Component naming convention](components_naming.md)
 * [Tracing and results/output files](tracing_and_results.md)
 * [The 2G4/BLE Phy](2G4.md)
