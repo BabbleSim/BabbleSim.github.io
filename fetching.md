@@ -3,7 +3,7 @@
 The BabbleSim project consists of many components, most of them optional
 and each in its own separate git repository.
 
-There is several ways to fetch it:
+There are several ways to fetch it:
 
 ### Using Android's repo
 
