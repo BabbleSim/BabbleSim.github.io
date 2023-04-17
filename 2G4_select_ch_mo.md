@@ -1,6 +1,6 @@
 ## How to select channel and modem (2G4 Phy v1)
 
-By default the ext_2G4_phy_v1 will use the 2G4 "N to N cable" channel model
+By default the 2G4 v1 Phy (ext_2G4_phy_v1 component) will use the 2G4 "N to N cable" channel model
 and the "2G4 magical" modem model for all devices.
 
 But it is possible to select other channel models for the simulation,
