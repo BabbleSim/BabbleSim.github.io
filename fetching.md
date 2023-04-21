@@ -31,6 +31,17 @@ west update
 For a list and description of the provided manifests, see the
 [west manifest repository documentation](https://github.com/BabbleSim/bsim_west)
 
+### Using Zephyr's west tool, as part of a Zephyr or nRF Connect SDK workspace
+
+New enough Zephyr and NCS repositories (main branch newer than 2023/04/20)
+include BabbleSim in their main manifest, but disabled by default.
+You can enable that group by adding to the west workspace group filter babblesim:
+```
+west config manifest.group-filter -- +babblesim
+west update
+```
+After that you will find the simulator in the `tools/bsim` folder of your workspace.
+
 ### As a set of separate projects, with git submodule, subtree, or vanilla git
 
 You may fetch each git repository manually or by other means.
@@ -46,7 +57,8 @@ for information about how to place them.
 <span class="monospaced-font">~/.zephyrrc</span> file<br>
 <span class="monospaced-font">
 export BSIM_OUT_PATH=${HOME}/bsim/ #If fetched with the repo instructions<br>
-export BSIM_OUT_PATH=${HOME}/bsim/bsim/ #If fetched with the west instructions<br>
+export BSIM_OUT_PATH=${HOME}/bsim/bsim/ #If fetched with the standalone west instructions<br>
+export BSIM_OUT_PATH=${ZEPHYR_BASE}/../tools/bsim/ #If fetched as part of the Zephyr or NCS workspace<br>
 export BSIM_COMPONENTS_PATH=${BSIM_OUT_PATH}/components/<br>
 #replace those paths as necessary
 </span>
