@@ -1,30 +1,31 @@
 ## Release flow
 
-<center>
-<object data="Release_process.svg" type="image/svg+xml">
-<p style="text-align:center">BabbleSim release flow drawing</p>
-</object>
-<p style="text-align:center">BabbleSim release flow</p>
-</center>
+### Release flow since 2018.
 
-A release is a tested snapshot of the BabbleSim base and selected components
-main branches.
-For regression purposes, customers can assume that releases do not change.
-The only allowed changes in a release branch are:
+BabbleSim's components master branches are tested,
+and kept so that all non-deprecated components master branches tips can be used with each other.
 
-* Patches which do NOT break IPC binary compatibility. (A binary compiled with
-  a drop of a release must work with another binary compiled with another drop
-  of the same release)
-* New selected, requested, features, but only before the release is frozen.
-  These new features shall not change any used API or functionality.
-* After release freeze only necessary bugfixes which are very well understood,
-  and well tested to not cause any regression will be allowed.
+A release is a snapshot of the BabbleSim base and selected components
+master branches which work correctly with each other.
 
-Once a release is declared EoL no more changes will be done to it.
+For all purposes, customers can assume that releases do not change.
 
-Each release will be accompanied by a change log. Backwards compatibility
-will be documented in the changelog.
 
-The simulator will be kept as backwards compatible as possible in between
-releases.
-Both for the IPC libraries and general libraries APIs.
+#### Release flow procedure (internal)
+
+* Ensure all local component repos and authoritative remotes master branches are aligned. (`git fetch upstream master`)
+* For all components that require a new tag
+    * Update the version file to the upcoming tag, and commit it
+    * Tag the repository, and push the tag to the authoritative repo
+* Chose a new overall release version (vX.Y.Z):
+    * If only minor bugfixes or minor new features or improvements are included, just a patch version increase (Z++)
+    * If more significant bugfixes, features or improvements (mostly if they could be required by a customer), a minor version increase (Y++.0)
+    * If very significant changes, specially when compatibility with previous released components is broken, a mayor version increase (X++.0)
+* For both repo and west manifests repos, on the master/main branch:
+    * For all manifests that track particular versions
+        * Go thru all its components and ensure they are pointing to their latest tag
+        * Commit, and push to test manifest-repo master
+        * repo/west init from test repo, and sync/update, to ensure no sha/tag is malformed.
+        * Push to manifest-repo master
+        * Create a new vX.Y.Z branch on that exact same commit
+        * Push that vX.Y.Z branch to manifest-repo
