@@ -18,8 +18,8 @@ For all purposes, customers can assume that releases do not change.
     * Update the version file to the upcoming tag, and commit it
     * Tag the repository, and push the tag to the authoritative repo
 * Chose a new overall release version (vX.Y.Z):
-    * If only minor bugfixes or minor new features or improvements are included, just a patch version increase (Z++)
-    * If more significant bugfixes, features or improvements (mostly if they could be required by a customer), a minor version increase (Y++.0)
+    * If only minor bugfixes or minor new features or improvements are included, just a patch version increase (X.Y.Z++)
+    * If more significant bugfixes, features or improvements (mostly if they could be required by a customer), a minor version increase (X.Y++)
     * If very significant changes, specially when compatibility with previous released components is broken, a mayor version increase (X++.0)
 * For both repo and west manifests repos, on the master/main branch:
     * For all manifests that track particular versions
