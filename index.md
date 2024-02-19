@@ -112,19 +112,19 @@ For BLE (BT Smart) development, it includes:
 * A device which can re-play back the activity of any device in a a previous simulation run:
   [ext_2G4_device_playback](https://github.com/BabbleSim/ext_2G4_device_playback)
 
-#### Zephyr's NRF52_bsim and the NRF52 HW models
+#### Zephyr's nRF5xbsim targets and the NRF5x HW models
 
 Even though BabbleSim does not set how the CPU is emulated
 (if at all), or how the HW should be modelled, the BabbleSim GitHub
 organization does contain a git repository with
-[models of the NRF52 HW](https://github.com/BabbleSim/ext_NRF52_hw_models).<br>
+[models of the NRF5x HW](https://github.com/BabbleSim/ext_NRF_hw_models).<br>
 These models can be used together with
 [Zephyr's](https://zephyrproject.org)
-[nrf52_bsim board](https://docs.zephyrproject.org/latest/boards/posix/nrf52_bsim/doc/index.html)
+[nrf5xbsim target boards](https://docs.zephyrproject.org/latest/boards/posix/doc/bsim_boards_design.html)
 to execute Zephyr and use BabbleSim's 2G4 Phy to simulate the BLE communication
 over the 2.4GHz ISM band.
 A quick guide on how to get this device up and running can be found
-[in this board's page](https://docs.zephyrproject.org/latest/boards/posix/nrf52_bsim/doc/index.html#building-and-running)
+[in this board's page](https://docs.zephyrproject.org/latest/boards/posix/nrf_bsim/doc/nrf52_bsim.html#building-and-running)
 
 ### Design choices
 
