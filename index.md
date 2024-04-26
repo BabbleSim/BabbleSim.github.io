@@ -98,9 +98,9 @@ parsing, random number generation, etc.
 Moreover, a set of simple debug aid/ancillary devices are included in the
 [base repository](https://github.com/BabbleSim/base).
 
-For BLE (BT Smart) development, it includes:
+For BLE (BT Smart) and 15.4 development, it includes:
 
-* A physical layer for BLE devices: The [2G4 Phy](2G4.md).
+* A physical layer for BLE and 15.4 devices: The [2G4 Phy](2G4.md).
 * [Interferers models](2G4Interf.md)
 * 3 selectable channel models:
     * A [cable + N to N attenuator](https://github.com/BabbleSim/ext_2G4_channel_NtNcable)
@@ -120,11 +120,11 @@ organization does contain a git repository with
 [models of the NRF5x HW](https://github.com/BabbleSim/ext_NRF_hw_models).<br>
 These models can be used together with
 [Zephyr's](https://zephyrproject.org)
-[nrf5xbsim target boards](https://docs.zephyrproject.org/latest/boards/posix/doc/bsim_boards_design.html)
-to execute Zephyr and use BabbleSim's 2G4 Phy to simulate the BLE communication
+[nrf5xbsim target boards](https://docs.zephyrproject.org/latest/boards/native/doc/bsim_boards_design.html)
+to execute Zephyr and use BabbleSim's 2G4 Phy to simulate BLE and 15.4 communication
 over the 2.4GHz ISM band.
 A quick guide on how to get this device up and running can be found
-[in this board's page](https://docs.zephyrproject.org/latest/boards/posix/nrf_bsim/doc/nrf52_bsim.html#building-and-running)
+[in these boards' pages](https://docs.zephyrproject.org/latest/boards/native/nrf_bsim/doc/nrf52_bsim.html#building-and-running)
 
 ### Design choices
 
