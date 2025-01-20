@@ -2,7 +2,7 @@
 
 ### Does the 2G4 Phy simulation support LE Coded Phy?
 
-No. Today only 1 and 2Mbps BLE modulations are supported, as well as 2, 3 & 4Mbps propietary modulations.
+Yes
 
 ### Can I run BabbleSim in Windows?
 
@@ -62,6 +62,19 @@ In this case, if your system has python3 installed, a solution is to modify the 
 
 If you don't have python3, you can download an older version of repo which works with `python2`:
 [https://source.android.com/setup/develop#old-repo-python2](https://source.android.com/setup/develop#old-repo-python2)
+
+### Can I run BabbleSim with the nRF HW models on an ARM64 host
+
+Short answer: Not today.
+
+Long answer: Some ARM64 targets (like Mac HW) do not support executing 32bit ARM instructions. Some others do.
+
+Even for those which do, the userspace has significant differences. The current way of building the simulator libraries, HW models and embedded SW
+assume an x86-64 host.
+
+The BabbleSim libraries are built today both as 64 and 32bit binary versions to be usable from 64 and 32bit binaries.
+
+The embedded SW for most embedded targets, and the nordic HW models (just like the real HW) assume that the addressing space is 32bits, that is that sizeof(void*) == sizeof(int) == 4. In a 64bit target this is not the case, and therefore code meant for a 32bit embedded system will either fail to build or crash if run as a 64bit binary.
 
 
 ### Can I fetch BabbleSim as a set of git submodules instead of using repo?
