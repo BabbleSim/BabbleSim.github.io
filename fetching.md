@@ -3,7 +3,8 @@
 The BabbleSim project consists of many components, most of them optional
 and each in its own separate git repository.
 
-There are several ways to fetch it:
+There are several ways to fetch it, using android's repo, west or plain git.<br>
+You can find instructions on how to install git, repo and west in [dependencies](dependencies.md).
 
 ### Using Android's repo
 

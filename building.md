@@ -1,7 +1,6 @@
 ## Building BabbleSim
 
-BabbleSim uses [GNU Make](https://www.gnu.org/software/make/)
-to build the provided components.
+Check [dependencies](dependencies.md) to know which tools you need to have installed to build.
 
 If you have already [fetched BabbleSim](fetching.md), building a
 component and its dependencies is as easy as running

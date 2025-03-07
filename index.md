@@ -138,6 +138,7 @@ This is BabbleSim's list of [design choices & objectives](objectives.md)
 
 * [Announcements](Announcements.md)
 * [Babblesim's architecture](architecture.md)
+* [Dependencies](dependencies.md)
 * [How to fetch BabbleSim](fetching.md)
 * [BabbleSim folder structure](folder_structure_and_env.md)
 * [How to build](building.md) BabbleSim
