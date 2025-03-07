@@ -9,7 +9,7 @@ You can find instructions on how to install git, repo and west in [dependencies]
 ### Using Android's repo
 
 The easiest and recommended way to fetch them is by using
-[Androids repo](https://source.android.com/setup/build/downloading#installing-repo)
+[Androids repo](https://gerrit.googlesource.com/git-repo/)
 
 ```
 mkdir ~/bsim/ && cd ~/bsim/

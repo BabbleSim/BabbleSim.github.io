@@ -2,7 +2,7 @@
 
 Babblesim works in Linux. If you want to run it in Windows, you can either use WSL2 or another virtual machine.
 
-For fetching BabbleSim components you will need `git`, and may want to use either [Android's `repo`](https://source.android.com/setup/build/downloading#installing-repo) or [`west`](https://docs.zephyrproject.org/latest/develop/west/install.html).
+For fetching BabbleSim components you will need `git`, and may want to use either [Android's `repo`](https://gerrit.googlesource.com/git-repo/) or [`west`](https://docs.zephyrproject.org/latest/develop/west/install.html).
 In Ubuntu 24.04 you can install git and repo with:
 
 ```
