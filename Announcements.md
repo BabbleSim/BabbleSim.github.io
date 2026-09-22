@@ -1,5 +1,28 @@
 ## Past announcements
 
+
+### 2026/09/22 : New v3.1.1 BabbleSim release
+
+A new release of BabbleSim has just been done (v3.1.1) and it is being propagated to Zephyr's manifest.
+Like always this release remains backwards compatible, so you can safely update to it.
+When / if another component requires a given BabbleSim updated version you will get to know when that component is updated.
+
+Release:
+
+* [West](https://github.com/BabbleSim/bsim_west/commit/0673623452f0a3cb50b7563c32ac7683304cb6fc)
+* [Repo](https://github.com/BabbleSim/manifest/commit/8127090e33ec6444ebe4e3dc9ace94151d733a94)
+
+Updates in Zephyr:
+
+* https://github.com/zephyrproject-rtos/zephyr/pull/119948
+* github.com/zephyrproject-rtos/docker-image/pull/313
+
+Main changes since v3.1:
+
+* Performance improvements
+* Some new APIs added to libUtilv1
+
+
 ### 2026/06/24 : New v3.1 BabbleSim release
 
 A new release of BabbleSim has just been done (v3.1) and it is being propagated to Zephyr's manifest.
